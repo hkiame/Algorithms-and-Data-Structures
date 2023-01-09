@@ -5,8 +5,12 @@ const maxDepth = (root) => {
     return 0;
   }
 
+  console.log("left", root.left);
   let leftDepth = maxDepth(root.left);
+  console.log("right", root.right);
   let rightDepth = maxDepth(root.right);
+
+  console.log("leftDepth: ", leftDepth, "rightDepth: ", rightDepth);
   return Math.max(leftDepth, rightDepth) + 1;
 };
 
