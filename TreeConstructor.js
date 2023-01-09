@@ -81,8 +81,6 @@ function TreeConstructor(strArr) {
     }
   }
 
-  console.log(tree);
-
   for (const [key, value] of tree) {
     if (value.parent === false) {
       root += 1;
