@@ -10,6 +10,7 @@ function longestConsecutiveElements(nums) {
     if (!numSet.has(num - 1)) {
       let len = 0;
 
+      // while loop does not scale with n. Therefore, it's considered O(1)
       while (numSet.has(num + len)) {
         len += 1;
       }
