@@ -2,6 +2,9 @@ function anagram_index(hay, needle) {
   const hayLen = hay.length;
   const needleLen = needle.length;
 
+  // if needle is longer than hay, no match possible
+  if (needleLen > hayLen) return -1;
+
   function isAnagram(substr1, substr2) {
     const formated1 = substr1.split("").sort().join("");
     const formated2 = substr2.split("").sort().join("");
@@ -12,7 +15,7 @@ function anagram_index(hay, needle) {
   const lastSubstringIndex = hayLen - needleLen;
 
   for (let i = 0; i <= lastSubstringIndex; i++) {
-    const substring = hay.substr(i, needleLen);
+    const substring = hay.substring(i, i + needleLen);
 
     if (isAnagram(needle, substring)) {
       return i;
